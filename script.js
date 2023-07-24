@@ -31,10 +31,10 @@ function goToTriviaPage(category) {
       goToTriviaPage('music');
     });
   
-    const musicalsButton = document.getElementById('musicalsButton');
-    musicalsButton.addEventListener('click', () => {
-      goToTriviaPage('musicals');
-    });
+    // const musicalsButton = document.getElementById('musicalsButton');
+    // musicalsButton.addEventListener('click', () => {
+    //   goToTriviaPage('musicals');
+    // });
   
     const televisionButton = document.getElementById('televisionButton');
     televisionButton.addEventListener('click', () => {
@@ -86,10 +86,10 @@ function goToTriviaPage(category) {
       goToTriviaPage('politics');
     });
   
-    const artButton = document.getElementById('artButton');
-    artButton.addEventListener('click', () => {
-      goToTriviaPage('art');
-    });
+    // const artButton = document.getElementById('artButton');
+    // artButton.addEventListener('click', () => {
+    //   goToTriviaPage('art');
+    // });
   
     const celebritiesButton = document.getElementById('celebritiesButton');
     celebritiesButton.addEventListener('click', () => {
@@ -111,10 +111,10 @@ function goToTriviaPage(category) {
       goToTriviaPage('comics');
     });
   
-    const gadgetsButton = document.getElementById('gadgetsButton');
-    gadgetsButton.addEventListener('click', () => {
-      goToTriviaPage('gadgets');
-    });
+    // const gadgetsButton = document.getElementById('gadgetsButton');
+    // gadgetsButton.addEventListener('click', () => {
+    //   goToTriviaPage('gadgets');
+    // });
   
     const animeMangaButton = document.getElementById('animeMangaButton');
     animeMangaButton.addEventListener('click', () => {
