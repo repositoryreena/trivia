@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cartoon and Animations Trivia Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <button onclick="goToIndex()">Go Back to Categories</button>
+  <div class="container">
+    <div id="question-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // ... (all previous functions) ...
+
+    // Function to start the trivia game for Cartoon and Animations category
+    function startCartoonAnimationsGame() {
+      const selectedCategory = localStorage.getItem('selectedCategory');
+      if (!selectedCategory || selectedCategory !== 'cartoon-animations') {
+        console.error('Error: Invalid category selected.');
+        window.location.href = 'index.html';
+        return;
+      }
+
+      // Construct the API URL for the Cartoon and Animations category
+      const apiUrl = 'https://opentdb.com/api.php?amount=50&category=32';
+
+      // Make an API call to get the trivia questions for the Cartoon and Animations category
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const triviaQuestions = data.results;
+          if (!triviaQuestions || triviaQuestions.length === 0) {
+            console.error('Error: Trivia questions not found for the Cartoon and Animations category.');
+            window.location.href = 'index.html';
+            return;
+          }
+
+          // Store the trivia questions and current question index in sessionStorage
+          sessionStorage.setItem('triviaQuestions', JSON.stringify(triviaQuestions));
+          sessionStorage.setItem('currentQuestion', '0');
+
+          // Start the trivia game
+          displayTriviaQuestion(triviaQuestions[0], 0);
+        })
+        .catch(error => {
+          console.error('Error fetching trivia data:', error);
+          window.location.href = 'index.html';
+        });
+    }
+
+    // Start the trivia game for the Cartoon and Animations category when the page loads
+    startCartoonAnimationsGame();
+  </script>
+</body>
+</html>
