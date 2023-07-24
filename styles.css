@@ -1,7 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    margin: 0; /* Remove default body margin */
+    margin: 0;
+    text-align: center;
   }
   
   .container {
@@ -10,11 +11,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding: 20px; /* Add padding around the container */
+    padding: 20px;
   }
   
-  /* Use a custom class for each category button */
-  /* You can set different background colors for each category */
+  .category-button {
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
   .computers {
     background-color: #007BFF;
     color: #fff;
@@ -135,22 +147,6 @@ body {
     color: #fff;
   }
   
-  /* Add more styles here as needed */
-  
-  .category-button {
-    margin: 10px;
-    padding: 15px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 200px; /* Set a fixed width for each button */
-    text-align: center;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  /* Add hover effect to change button color on hover */
   .category-button:hover {
     filter: brightness(110%);
   }

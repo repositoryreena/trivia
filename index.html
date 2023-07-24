@@ -6,30 +6,34 @@
 </head>
 <body>
   <div class="container">
-    <button class="category-button computers" onclick="startTrivia('computers')">Computers</button>
-    <button class="category-button general_knowledge" onclick="startTrivia('general_knowledge')">General Knowledge</button>
-    <button class="category-button books" onclick="startTrivia('books')">Books</button>
-    <button class="category-button film" onclick="startTrivia('film')">Film</button>
-    <button class="category-button music" onclick="startTrivia('music')">Music</button>
-    <button class="category-button musicals" onclick="startTrivia('musicals')">Musicals</button>
-    <button class="category-button television" onclick="startTrivia('television')">Television</button>
-    <button class="category-button video_games" onclick="startTrivia('video_games')">Video Games</button>
-    <button class="category-button board_games" onclick="startTrivia('board_games')">Board Games</button>
-    <button class="category-button science_nature" onclick="startTrivia('science_nature')">Science & Nature</button>
-    <button class="category-button math" onclick="startTrivia('math')">Math</button>
-    <button class="category-button mythology" onclick="startTrivia('mythology')">Mythology</button>
-    <button class="category-button sports" onclick="startTrivia('sports')">Sports</button>
-    <button class="category-button geography" onclick="startTrivia('geography')">Geography</button>
-    <button class="category-button history" onclick="startTrivia('history')">History</button>
-    <button class="category-button politics" onclick="startTrivia('politics')">Politics</button>
-    <button class="category-button art" onclick="startTrivia('art')">Art</button>
-    <button class="category-button celebrities" onclick="startTrivia('celebrities')">Celebrities</button>
-    <button class="category-button animals" onclick="startTrivia('animals')">Animals</button>
-    <button class="category-button vehicles" onclick="startTrivia('vehicles')">Vehicles</button>
-    <button class="category-button comics" onclick="startTrivia('comics')">Comics</button>
-    <button class="category-button gadgets" onclick="startTrivia('gadgets')">Gadgets</button>
-    <button class="category-button anime_manga" onclick="startTrivia('anime_manga')">Anime and Manga</button>
-    <button class="category-button cartoon_animations" onclick="startTrivia('cartoon_animations')">Cartoon and Animations</button>
+    <button class="category-button computers" onclick="startTrivia(25)">Computers</button>
+    <button id="general-knowledge" class="category-button general_knowledge" onclick="startTrivia(9)">General Knowledge</button>
+    <button class="category-button books" onclick="startTrivia(10)">Books</button>
+    <button class="category-button film" onclick="startTrivia(11)">Film</button>
+    <button class="category-button music" onclick="startTrivia(12)">Music</button>
+    <button class="category-button musicals" onclick="startTrivia(13)">Musicals</button>
+    <button class="category-button television" onclick="startTrivia(14)">Television</button>
+    <button class="category-button video_games" onclick="startTrivia(15)">Video Games</button>
+    <button class="category-button board_games" onclick="startTrivia(16)">Board Games</button>
+    <button class="category-button science_nature" onclick="startTrivia(17)">Science & Nature</button>
+    <button class="category-button math" onclick="startTrivia(19)">Math</button>
+    <button class="category-button mythology" onclick="startTrivia(20)">Mythology</button>
+    <button class="category-button sports" onclick="startTrivia(21)">Sports</button>
+    <button class="category-button geography" onclick="startTrivia(22)">Geography</button>
+    <button class="category-button history" onclick="startTrivia(23)">History</button>
+    <button class="category-button politics" onclick="startTrivia(24)">Politics</button>
+    <button class="category-button art" onclick="startTrivia(25)">Art</button>
+    <button class="category-button celebrities" onclick="startTrivia(26)">Celebrities</button>
+    <button class="category-button animals" onclick="startTrivia(27)">Animals</button>
+    <button class="category-button vehicles" onclick="startTrivia(28)">Vehicles</button>
+    <button class="category-button comics" onclick="startTrivia(29)">Comics</button>
+    <button class="category-button gadgets" onclick="startTrivia(30)">Gadgets</button>
+    <button class="category-button anime_manga" onclick="startTrivia(31)">Anime and Manga</button>
+    <button class="category-button cartoon_animations" onclick="startTrivia(32)">Cartoon and Animations</button>
+    <!-- You can add more buttons for other categories -->
+
+    <!-- For simplicity, we'll display the trivia questions here -->
+    <div id="question-container"></div>
   </div>
 
   <script src="script.js"></script>

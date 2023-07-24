@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trivia Game - Questions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div id="question-container"></div>
+  </div>
+
+  <script>
+    // Function to shuffle the answers of a trivia question
+    function shuffleAnswers(answers) {
+      for (let i = answers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [answers[i], answers[j]] = [answers[j], answers[i]];
+      }
+    }
+
+    // Function to display a trivia question on the page
+    function displayTriviaQuestion(questionObj, questionNumber) {
+      const questionContainer = document.getElementById('question-container');
+      questionContainer.innerHTML = '';
+
+      const questionElement = document.createElement('h2');
+      questionElement.textContent = `Question ${questionNumber + 1}: ${questionObj.question}`;
+      questionContainer.appendChild(questionElement);
+
+      const answers = [...questionObj.incorrect_answers, questionObj.correct_answer];
+      shuffleAnswers(answers);
+
+      const answersContainer = document.createElement('div');
+      answersContainer.classList.add('answers-container');
+
+      answers.forEach(answer => {
+        const answerElement = document.createElement('button');
+        answerElement.textContent = answer;
+        answerElement.classList.add('answer-button');
+        answersContainer.appendChild(answerElement);
+      });
+
+      questionContainer.appendChild(answersContainer);
+    }
+
+    // Function to start the trivia game
+    function startGame() {
+      const selectedCategory = localStorage.getItem('selectedCategory');
+      if (!selectedCategory) {
+        alert('Error: Category not found. Please go back and select a category again.');
+        window.location.href = 'index.html';
+        return;
+      }
+
+      // Construct the API URL for the selected category
+      const apiUrl = `https://opentdb.com/api.php?amount=50&category=${selectedCategory}`;
+
+      console.log('API URL:', apiUrl); // Debugging statement
+
+      // Make an API call to get the trivia questions for the selected category
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          console.log('API Response:', data); // Debugging statement
+
+          const triviaQuestions = data.results;
+          if (!triviaQuestions || triviaQuestions.length === 0) {
+            alert('Error: Trivia questions not found for the selected category.');
+            window.location.href = 'index.html';
+            return;
+          }
+
+          // Store the trivia questions in sessionStorage
+          sessionStorage.setItem('triviaQuestions', JSON.stringify(triviaQuestions));
+
+          // Start the trivia game
+          const totalQuestions = triviaQuestions.length;
+          let currentQuestion = 0;
+
+          function handleAnswerClick(event) {
+            const selectedAnswer = event.target.textContent;
+            const correctAnswer = triviaQuestions[currentQuestion].correct_answer;
+
+            if (selectedAnswer === correctAnswer) {
+              console.log('Correct answer! Well done!');
+            } else {
+              console.log(`Wrong answer! The correct answer is: ${correctAnswer}`);
+            }
+
+            currentQuestion++;
+            if (currentQuestion < totalQuestions) {
+              displayTriviaQuestion(triviaQuestions[currentQuestion], currentQuestion);
+            } else {
+              console.log('Trivia game finished! Good job!');
+              window.location.href = 'index.html';
+            }
+          }
+
+          displayTriviaQuestion(triviaQuestions[currentQuestion], currentQuestion);
+          const answerButtons = document.querySelectorAll('.answer-button');
+          answerButtons.forEach(button => button.addEventListener('click', handleAnswerClick));
+        })
+        .catch(error => {
+          console.error('Error fetching trivia data:', error);
+          alert('Error: Failed to fetch trivia questions. Please try again later.');
+          window.location.href = 'index.html';
+        });
+    }
+
+    // Wait for the page to load before starting the game
+    document.addEventListener('DOMContentLoaded', startGame);
+  </script>
+</body>
+</html>
