@@ -3,6 +3,11 @@
 <head>
   <title>Computers Trivia Game</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <button onclick="goToIndex()">Go Back to Categories</button>
@@ -11,7 +16,7 @@
   </div>
 
   <script>
-    // Function to escape and decode HTML special characters
+    // Function to escape and decode HTML special characters and entities
     function escapeAndDecodeHTML(text) {
       const div = document.createElement('div');
       div.innerHTML = text;
@@ -43,7 +48,7 @@
 
       answers.forEach(answer => {
         const answerElement = document.createElement('button');
-        answerElement.textContent = escapeAndDecodeHTML(answer);
+        answerElement.textContent = answer === questionObj.correct_answer ? escapeAndDecodeHTML(answer) : answer;
         answerElement.classList.add('answer-button');
         answersContainer.appendChild(answerElement);
       });
@@ -80,7 +85,7 @@
           window.location.href = 'index.html';
         }
       } else {
-        console.log(`Wrong answer! The correct answer is: ${correctAnswer}`);
+        console.log(`Wrong answer! The correct answer is: ${escapeAndDecodeHTML(correctAnswer)}`);
       }
     }
 
