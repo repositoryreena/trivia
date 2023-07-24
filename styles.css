@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0; /* Remove default body margin */
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Add padding around the container */
+  }
+  
+  /* Use a custom class for each category button */
+  /* You can set different background colors for each category */
+  .computers {
+    background-color: #007BFF;
+    color: #fff;
+  }
+  
+  .general_knowledge {
+    background-color: #00C853;
+    color: #fff;
+  }
+  
+  .books {
+    background-color: #FF5722;
+    color: #fff;
+  }
+  
+  .film {
+    background-color: #E91E63;
+    color: #fff;
+  }
+  
+  .music {
+    background-color: #9C27B0;
+    color: #fff;
+  }
+  
+  .musicals {
+    background-color: #FF9800;
+    color: #fff;
+  }
+  
+  .television {
+    background-color: #03A9F4;
+    color: #fff;
+  }
+  
+  .video_games {
+    background-color: #3F51B5;
+    color: #fff;
+  }
+  
+  .board_games {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .science_nature {
+    background-color: #FFEB3B;
+    color: #000;
+  }
+  
+  .math {
+    background-color: #795548;
+    color: #fff;
+  }
+  
+  .mythology {
+    background-color: #CDDC39;
+    color: #000;
+  }
+  
+  .sports {
+    background-color: #607D8B;
+    color: #fff;
+  }
+  
+  .geography {
+    background-color: #FF5722;
+    color: #fff;
+  }
+  
+  .history {
+    background-color: #9E9E9E;
+    color: #fff;
+  }
+  
+  .politics {
+    background-color: #2196F3;
+    color: #fff;
+  }
+  
+  .art {
+    background-color: #673AB7;
+    color: #fff;
+  }
+  
+  .celebrities {
+    background-color: #F44336;
+    color: #fff;
+  }
+  
+  .animals {
+    background-color: #009688;
+    color: #fff;
+  }
+  
+  .vehicles {
+    background-color: #FF9800;
+    color: #fff;
+  }
+  
+  .comics {
+    background-color: #3F51B5;
+    color: #fff;
+  }
+  
+  .gadgets {
+    background-color: #FFC107;
+    color: #000;
+  }
+  
+  .anime_manga {
+    background-color: #E91E63;
+    color: #fff;
+  }
+  
+  .cartoon_animations {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  /* Add more styles here as needed */
+  
+  .category-button {
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px; /* Set a fixed width for each button */
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Add hover effect to change button color on hover */
+  .category-button:hover {
+    filter: brightness(110%);
+  }
+  
